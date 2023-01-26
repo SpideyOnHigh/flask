@@ -8,6 +8,8 @@ import pandas as pd
 app = Flask(__name__)
 
 enc = pickle.load(open('enc.pkl','rb'))
+model = pickle.load(open('model.pkl','rb'))
+
 
 @app.route('/recommend',methods = ['POST'])
 def recommend():
@@ -29,5 +31,4 @@ def recommend():
 
 
 if __name__ == '__main__':
-    model = pickle.load(open('model.pkl','rb'))
     app.run(debug=True)
