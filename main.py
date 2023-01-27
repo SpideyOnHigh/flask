@@ -22,6 +22,12 @@ def recommend():
     input_features = pd.DataFrame(
         {'veg_or_nonveg': [veg_or_nonveg], 'Taste': [taste], 'Prep Time': [prep_time], 'Budget': [budget],
          'Type': [type]})
+    
+    print(veg_or_nonveg)
+    print(taste)
+    print(prep_time)
+    print(budget)
+    
 
     # One-hot encode the input features
     input_features = enc.transform(input_features).toarray()
