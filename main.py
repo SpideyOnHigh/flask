@@ -19,7 +19,7 @@ def recommend():
     budget = request.form.get('budget')
     type = request.form.get('type')
     
-    data = data = [['Vegetarian', 'Spicy', '10Mins', 'Low budget', 'Snacks']]
+    data = data = [[veg_or_nonveg, taste, prep_time, budget, type]]
 
     input_features = pd.DataFrame(data, columns=['veg_or_nonveg', 'Taste', 'Prep Time', 'Budget', 'Type'])
 
