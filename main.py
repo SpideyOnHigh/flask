@@ -20,9 +20,9 @@ def recommend():
     type = request.form.get('type')
 
     input_features = pd.DataFrame(
-        {'veg_or_nonveg': [veg_or_nonveg], 'Taste': [taste], 'Prep Time': [prep_time], 'Budget': [budget],
-         'Type': [type]})
-    
+        {'veg_or_nonveg': veg_or_nonveg, 'Taste': taste, 'Prep Time': prep_time, 'Budget': budget,
+         'Type': type})
+    print(input_features)
     print(veg_or_nonveg)
     print(taste)
     print(prep_time)
