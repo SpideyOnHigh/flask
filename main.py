@@ -18,16 +18,13 @@ def recommend():
     prep_time = request.form.get('prep_time')
     budget = request.form.get('budget')
     type = request.form.get('type')
-
-    input_features = pd.DataFrame(
-        {'veg_or_nonveg': veg_or_nonveg, 'Taste': taste, 'Prep Time': prep_time, 'Budget': budget,
-         'Type': type})
-    print(input_features)
-    print(veg_or_nonveg)
-    print(taste)
-    print(prep_time)
-    print(budget)
     
+    data = data = [['Vegetarian', 'Spicy', '10Mins', 'Low budget', 'Snacks']]
+
+    input_features = pd.DataFrame(data, columns=['veg_or_nonveg', 'Taste', 'Prep Time', 'Budget', 'Type'])
+
+    print(input_features)
+   
 
     # One-hot encode the input features
     input_features = enc.transform(input_features).toarray()
